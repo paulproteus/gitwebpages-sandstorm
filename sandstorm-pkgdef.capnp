@@ -4,17 +4,17 @@ using Spk = import "/sandstorm/package.capnp";
 using Util = import "/sandstorm/util.capnp";
 
 const pkgdef :Spk.PackageDefinition = (
-  id = "6va4cjamc21j0znf5h5rrgnv0rpyvh1vaxurkrgknefvj0x63ash",
+  id = "hpu0xyfypehsc5k6u0sc98apnk2qh39nys5p1x9gvjtknwahsv60",
   # Your app ID is actually its public key. The private key was placed in
   # your keyring. All updates must be signed with the same key.
 
   manifest = (
-    appTitle = (defaultText = "GitWeb"),
-    appVersion = 3,  # Increment this for every release.
-    appMarketingVersion = (defaultText = "0.0.3"),
+    appTitle = (defaultText = "GitWeb Pages"),
+    appVersion = 0,  # Increment this for every release.
+    appMarketingVersion = (defaultText = "0.0.1"),
 
     actions = [
-      ( title = (defaultText = "New GitWeb Repository"),
+      ( title = (defaultText = "New GitWeb Pages Repository"),
         command = .startCommand
       )
     ],
@@ -56,7 +56,7 @@ const pkgdef :Spk.PackageDefinition = (
 
 const commandEnvironment : List(Util.KeyValue) =
   [
-    (key = "PATH", value = "/usr/local/bin:/usr/bin:/bin")
+    (key = "PATH", value = "/usr/local/bin:/usr/bin:/usr/sbin:/bin")
   ];
 
 const startCommand :Spk.Manifest.Command = (

@@ -1,6 +1,6 @@
 #! /bin/sh
 
-set -x
+set -ex
 
 mkdir -p /var/lib/nginx
 mkdir -p /var/log/nginx
@@ -22,4 +22,4 @@ cat config
 
 cd /
 
-source continue.sh
+exec ./continue.sh
