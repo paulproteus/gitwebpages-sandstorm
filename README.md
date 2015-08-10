@@ -17,6 +17,24 @@ instructions on how to modify it for your own needs.
   `vagrant-spk`. You will need Sandstorm installed on your development
   machine to follow these steps.)
 
+* (HOPEFULLY) Compile the embedded C++ program with:
+
+```
+sudo apt-get install libcapnp-dev
+cd sandstorm
+make
+```
+
+* If you find it doesn't compile, then you can nab it out of an
+  existing binary package. To do that:
+
+```
+cd /tmp
+wget http://u0wuqfzjebhnjlva43v1.sandstorm.strange.computer/gitwebpages.spk
+spk unpack gitwebpages.spk
+cp gitwebpages/sandstorm/bin/getPublicId ~/projects/gitwebpages-sandstorm/sandstorm/bin/
+```
+
 * Download dependencies with:
 
 ```
