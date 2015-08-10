@@ -1533,6 +1533,34 @@ sub is_valid_refname {
 	return 1;
 }
 
+# take a string, and if it needs the current Sandstorm grain's
+# publicId added, execute the helper program and do a string
+# replace.
+sub with_publicid_added_if_needed {
+    my $str = shift;
+
+    if ($str =~ /__SANDSTORM_PUBLICID_MSG__/) {
+        my $cmdOutput = `/sandstorm/bin/getPublicId $ENV{'HTTP_X_SANDSTORM_SESSION_ID'}`;
+        $_ = $cmdOutput;
+        s/has automatically been published/will automatically be published/;
+        $cmdOutput = escapeHTML($_);
+        $_ = $str;
+        s/__SANDSTORM_PUBLICID_MSG__/$cmdOutput/;
+        return $_;
+    }
+
+    return $str;
+}
+
+# assume that file exists
+sub insert_file_sandstorm_substituted {
+	my $filename = shift;
+
+	open my $fd, '<', $filename;
+	print map { with_publicid_added_if_needed(to_utf8($_)) } <$fd>;
+	close $fd;
+}
+
 # decode sequences of octets in utf8 into Perl's internal form,
 # which is utf-8 with utf8 flag set if needed.  gitweb writes out
 # in utf-8 thanks to "binmode STDOUT, ':utf8'" at beginning
@@ -6455,7 +6483,7 @@ sub git_project_list {
 	git_header_html();
 	if (defined $home_text && -f $home_text) {
 		print "<div class=\"index_include\">\n";
-		insert_file($home_text);
+		insert_file_sandstorm_substituted($home_text);
 		print "</div>\n";
 	}
 
