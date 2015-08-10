@@ -68,10 +68,11 @@ sandstorm-manifest
 sandstorm/bin/getPublicId
 srv/http/gitweb/gitweb.cgi
 srv/http/gitweb/indextext.html
+srv/http/gitweb/sandstorm.js
+srv/http/gitweb/static/git-favicon.png
 srv/http/gitweb/static/git-logo.png
 srv/http/gitweb/static/gitweb.css
 srv/http/gitweb/static/gitweb.js
-srv/http/gitweb/webkey.png
 start.sh
 usr/bin/cat
 usr/bin/env
@@ -178,4 +179,9 @@ usr/share/perl/5.18.2/strict.pm
 usr/share/perl/5.18.2/vars.pm
 usr/share/perl/5.18.2/warnings.pm
 usr/share/perl/5.18.2/warnings/register.pm
+usr/share/perl5/vendor_perl/CGI.pm
+usr/share/perl5/vendor_perl/CGI/Carp.pm
+usr/share/perl5/vendor_perl/CGI/File/Temp.pm
+usr/share/perl5/vendor_perl/CGI/Util.pm
+usr/share/perl5/vendor_perl/Fh.pm
 usr/share/zoneinfo/America/New_York
