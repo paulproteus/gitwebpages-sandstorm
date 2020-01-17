@@ -35,10 +35,10 @@ spk unpack gitwebpages.spk
 cp gitwebpages/sandstorm/bin/getPublicId ~/projects/gitwebpages-sandstorm/sandstorm/bin/
 ```
 
-* Download dependencies with:
+* Download dependencies (as of Ubuntu 18.04) with:
 
 ```
-sudo apt-get install busybox-static nginx git fcgiwrap
+sudo apt-get install busybox-static nginx git fcgiwrap capnproto pkg-config clang libcgi-pm-perl
 ```
 
 * Make sure it runs on your local (development) Sandstorm server with:
@@ -46,6 +46,7 @@ sudo apt-get install busybox-static nginx git fcgiwrap
 ```
 spk dev
 ```
+* Be sure to actually load the grain in your browser.
 
 * Use Ctrl-C to stop `spk dev`.
 

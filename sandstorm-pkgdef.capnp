@@ -4,14 +4,14 @@ using Spk = import "/sandstorm/package.capnp";
 using Util = import "/sandstorm/util.capnp";
 
 const pkgdef :Spk.PackageDefinition = (
-  id = "vfqrxpcsgpuz5cgxu63vj241zj8kq6pe60ck0uguxggzkm4yx260",
+  id = "g1k27td96hm9fjnkn20jw5apkphhcd5wrcccdve9fuvykfz68650",
   # Your app ID is actually its public key. The private key was placed in
   # your keyring. All updates must be signed with the same key.
 
   manifest = (
-    appTitle = (defaultText = "GitWeb Pages"),
-    appVersion = 6,  # Increment this for every release.
-    appMarketingVersion = (defaultText = "0.0.6-asheesh"),
+    appTitle = (defaultText = "GitWeb Pages by abliss"),
+    appVersion = 7,  # Increment this for every release.
+    appMarketingVersion = (defaultText = "0.0.7-abliss"),
 
     actions = [
       ( title = (defaultText = "New GitWeb Pages Repository"),
@@ -60,12 +60,12 @@ const commandEnvironment : List(Util.KeyValue) =
   ];
 
 const startCommand :Spk.Manifest.Command = (
-  argv = ["/sandstorm-http-bridge", "10000", "--", "/bin/sh", "start.sh"],
+  argv = ["/sandstorm-http-bridge", "10000", "--", "/bin/bash", "start.sh"],
   environ = .commandEnvironment
 );
 
 
 const continueCommand :Spk.Manifest.Command = (
-  argv = ["/sandstorm-http-bridge", "10000", "--", "/bin/sh", "continue.sh"],
+  argv = ["/sandstorm-http-bridge", "10000", "--", "/bin/bash", "continue.sh"],
   environ = .commandEnvironment
 );
