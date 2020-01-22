@@ -4,14 +4,14 @@ using Spk = import "/sandstorm/package.capnp";
 using Util = import "/sandstorm/util.capnp";
 
 const pkgdef :Spk.PackageDefinition = (
-  id = "6va4cjamc21j0znf5h5rrgnv0rpyvh1vaxurkrgknefvj0x63ash",
+  id = "g1k27td96hm9fjnkn20jw5apkphhcd5wrcccdve9fuvykfz68650",
   # Your app ID is actually its public key. The private key was placed in
   # your keyring. All updates must be signed with the same key.
 
   manifest = (
-    appTitle = (defaultText = "GitWeb"),
-    appVersion = 9,  # Increment this for every release.
-    appMarketingVersion = (defaultText = "0.0.9"),
+    appTitle = (defaultText = "GitWeb+Pages by abliss"),
+    appVersion = 10,  # Increment this for every release.
+    appMarketingVersion = (defaultText = "0.1.0"),
     metadata = (
       icons = (
         appGrid = (svg = embed "app-graphics/gitweb-128.svg"),
@@ -19,12 +19,12 @@ const pkgdef :Spk.PackageDefinition = (
         market = (svg = embed "app-graphics/gitweb-150.svg"),
       ),
       website = "http://git-scm.com/docs/gitweb",
-      codeUrl = "https://github.com/dwrensha/gitweb-sandstorm",
+      codeUrl = "https://github.com/abliss/gitwebpages-sandstorm",
       license = (openSource = gpl2),
       categories = [developerTools,],
       author = (
         upstreamAuthor = "Christian Gierke and Kay Sievers",
-        contactEmail = "david@sandstorm.io",
+        contactEmail = "abliss@gmail.com",
         pgpSignature = embed "pgp-signature",
       ),
       pgpKeyring = embed "keyring",
