@@ -10,8 +10,8 @@ const pkgdef :Spk.PackageDefinition = (
 
   manifest = (
     appTitle = (defaultText = "GitWeb+Pages by abliss"),
-    appVersion = 10,  # Increment this for every release.
-    appMarketingVersion = (defaultText = "0.1.0"),
+    appVersion = 11,  # Increment this for every release.
+    appMarketingVersion = (defaultText = "0.1.1"),
     metadata = (
       icons = (
         appGrid = (svg = embed "app-graphics/gitweb-128.svg"),
